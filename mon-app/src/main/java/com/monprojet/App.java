@@ -1,8 +1,8 @@
-package com.monprojet;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class App {
     public static void main(String[] args) {
@@ -12,12 +12,15 @@ public class App {
         String motDePasse = "";
         Connection connexion = null;
 
-        System.out.println("Hello word");
-
         try {
             // Établir la connexion
-            connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
+            ( connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
             System.out.println("Connexion réussie !");
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT id, nom, email FROM utilisateurs")) {
+
+            System.out.println("Liste des utilisateurs :");
             
         } catch (SQLException e) {
             System.out.println("Erreur de connexion : " + e.getMessage());
