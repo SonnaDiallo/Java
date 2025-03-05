@@ -1,0 +1,11 @@
+.root {
+    -fx-background-image: url(javafx-app/src/main/resources/images/N.jpg);
+    -fx-background-size: cover;
+    -fx-background-color: #f4f4f4; /* Couleur de fond */
+    -fx-font-family: 'Arial';
+}
+
+
+.label {
+    -fx-text-fill: #8e14df; /* Couleur du texte */
+}
