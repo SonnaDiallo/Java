@@ -1,25 +1,34 @@
 package com.example;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Créer un label
-        Label label = new Label("Bonjour, JavaFX !");
+        try {
+            // Charger le fichier FXML
+            VBox root = FXMLLoader.load(getClass().getResource("/interface.fxml"));
 
-        // Créer une scène avec le label
-        Scene scene = new Scene(label, 300, 200);
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+            // Créer la scène
+            Scene scene = new Scene(root, 300, 200);
+            scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
-        // Configurer la fenêtre principale
-        primaryStage.setTitle("Ma Première Application JavaFX");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            // Configurer la fenêtre principale
+            primaryStage.setTitle("Ma Première Application JavaFX");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Erreur lors du chargement du fichier FXML !");
+        }
     }
 
     public static void main(String[] args) {
