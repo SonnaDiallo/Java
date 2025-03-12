@@ -1,4 +1,5 @@
 com\monprojet\Utilisateurs.class
 com\monprojet\App.class
+com\monprojet\EtudiantDAO.class
 com\monprojet\Connexion.class
 com\monprojet\GestionEtudiant.class

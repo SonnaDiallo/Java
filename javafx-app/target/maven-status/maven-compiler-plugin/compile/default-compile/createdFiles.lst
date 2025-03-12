@@ -1,1 +1,5 @@
-com\example\App.class
+com\monprojet\App.class
+com\monprojet\GestionUtilisateur.class
+com\monprojet\AppController.class
+com\monprojet\GestionEtudiant.class
+com\monprojet\Utilisateur.class
